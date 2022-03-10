@@ -1,0 +1,15 @@
+.table_th{
+	color: black;
+    font-size: 16px;
+    font-weight: 900;
+}
+.datepicker-date-display{
+    visibility: hidden !important;
+    display: none !important;
+}
+.datepicker-modal{
+    z-index: 2147483647 !important;
+   max-height:51% !important;
+ 
+}
+
