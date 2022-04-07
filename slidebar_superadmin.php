@@ -15,17 +15,17 @@ error_reporting(E_ALL);
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>Dashboard eCommerce | Materialize - Material Design Admin Template</title>
-    <link rel="apple-touch-icon" href="/preawebsite/images/favicon/apple-touch-icon-152x152.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/preawebsite/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="<?=base_url;?>/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url;?>/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vendors.min.css">
     <!-- END: VENDOR CSS-->
     <!-- BEGIN: Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vertical-modern-menu-template/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vertical-modern-menu-template/style.min.css">
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/app-assets/css/custom/custom.css">
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
@@ -42,7 +42,7 @@ error_reporting(E_ALL);
       <div class="brand-sidebar">
         <h1 class="logo-wrapper">
           <a class="brand-logo darken-1" href="#">
-            <img class="hide-on-med-and-down" src="/preawebsite/app-assets/images/logo/materialize-logo-color.png" alt="materialize logo"/><img class="show-on-medium-and-down hide-on-med-and-up" src="/preawebsite/app-assets/images/logo/materialize-logo.png" alt=""/>
+            <img class="hide-on-med-and-down" src="<?=base_url;?>app-assets/images/logo/materialize-logo-color.png" alt="materialize logo"/><img class="show-on-medium-and-down hide-on-med-and-up" src="<?=base_url;?>app-assets/images/logo/materialize-logo.png" alt=""/>
             <span class="logo-text hide-on-med-and-down">Materialize</span></a>
             <a class="navbar-toggler" href="#"><i class="material-icons">radio_button_checked</i></a>
         </h1>
@@ -51,7 +51,7 @@ error_reporting(E_ALL);
         <li class="navigation-header"><a class="navigation-header-text">Applications</a><i class="navigation-header-icon material-icons">more_horiz</i>
         </li>
         <li class="bold">
-          <a class="waves-effect waves-cyan " href="/preawebsite/add_admin.php">
+          <a class="waves-effect waves-cyan " href="<?=base_url;?>/add_admin.php">
             <i class="material-icons">mail_outline</i>
             <span class="menu-title" data-i18n="Mail">Add Storeowner</span>
             <!--<span class="badge new badge pill pink accent-2 float-right mr-2">5</span>-->
@@ -67,12 +67,12 @@ error_reporting(E_ALL);
     </div>
     <!-- END: SideNav-->
      <!-- BEGIN VENDOR JS-->
-    <script src="/preawebsite/js/vendors.min.js"></script>
+    <script src="<?=base_url;?>js/vendors.min.js"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN THEME  JS-->
-    <script src="/preawebsite/js/plugins.min.js"></script>
-    <script src="/preawebsite/js/search.min.js"></script>
-    <script src="/preawebsite/js/custom/custom-script.min.js"></script>
+    <script src="<?=base_url;?>js/plugins.min.js"></script>
+    <script src="<?=base_url;?>js/search.min.js"></script>
+    <script src="<?=base_url;?>js/custom/custom-script.min.js"></script>
     <script src="../preawebsite/app-assets/js/scripts/customizer.min.js"></script>
     <script src="../preawebsite/vendors/jquery-validation/jquery.validate.min.js"></script>
 

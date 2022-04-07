@@ -34,12 +34,12 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN: VENDOR CSS-->
     <link rel="stylesheet" type="text/css" href="<?=base_url;?>vendors/data-tables/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url;?>vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vendors/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vendors/flag-icon/css/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/style.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vendors/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vendors/flag-icon/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vertical-modern-menu-template/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vertical-modern-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/app-assets/css/custom/custom.css">
   </head>
   <!-- END: Head-->
   <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 2-columns   " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
@@ -124,16 +124,16 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
       </div>
     </div>
-    <script src="/preawebsite/vendors/data-tables/js/jquery.dataTables.min.js"></script>
-    <script src="/preawebsite/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js"></script>
-    <script src="/preawebsite/vendors/data-tables/js/dataTables.select.min.js"></script>
+    <script src="<?=base_url;?>vendors/data-tables/js/jquery.dataTables.min.js"></script>
+    <script src="<?=base_url;?>vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js"></script>
+    <script src="<?=base_url;?>vendors/data-tables/js/dataTables.select.min.js"></script>
     <!-- END THEME  JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="/preawebsite/app-assets/js/scripts/data-tables.min.js"></script>
+    <script src="<?=base_url;?>app-assets/js/scripts/data-tables.min.js"></script>
     <!-- END PAGE LEVEL JS-->
-    <script src="/preawebsite/js/vendors.min.js"></script>
-    <script src="/preawebsite/js/search.min.js"></script>
-    <script src="/preawebsite/js/plugins.min.js"></script>
-    <script src="/preawebsite/js/custom/custom-script.min.js"></script>
+    <script src="<?=base_url;?>js/vendors.min.js"></script>
+    <script src="<?=base_url;?>js/search.min.js"></script>
+    <script src="<?=base_url;?>js/plugins.min.js"></script>
+    <script src="<?=base_url;?>js/custom/custom-script.min.js"></script>
   </body>
 </html>

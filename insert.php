@@ -33,7 +33,7 @@ if(isset($_POST['submit']))
     <meta name="author" content="ThemeSelect">
     <title>Form Validation | Materialize - Material Design Admin Template</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-   <link rel="apple-touch-icon" href="/preawebsite/app-assets/images/favicon/apple-touch-icon-152x152.png">
+   <link rel="apple-touch-icon" href="<?=base_url;?>/app-assets/images/favicon/apple-touch-icon-152x152.png">
     <link rel="shortcut icon" type="image/x-icon" href="/Awebsite/app-assets/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
@@ -41,7 +41,7 @@ if(isset($_POST['submit']))
     <link rel="stylesheet" type="text/css" href="/Awebsite/vendors/flag-icon/css/flag-icon.min.css">
     <link rel="stylesheet" type="text/css" href="/Awebsite/vertical-modern-menu-template/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/Awebsite/vertical-modern-menu-template/style.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/app-assets/css/custom/custom.css">
     
   </head>
   <!-- END: Head-->

@@ -32,7 +32,7 @@ error_reporting(E_ALL);
   <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 2-columns   " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
     <row>
      <?php
-     include'..<?=base_url;?>header.php';
+     include 'header.php';
      ?>
    </row>
  <!-- BEGIN: SideNav-->
