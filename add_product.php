@@ -2,25 +2,27 @@
 <?php
 include 'connection.php';
 if(isset($_POST['submit'])){
-      echo '<pre>';
-    print_r($_POST);
-    echo '</pre>';
-    // die();
-    // $upc = $_POST['upc'];
-    // $part_code =  $_POST['part_code'];
-    // $description = $_POST['description'];
-    // $hsn =$_POST['hsn'];
-    // print_r($upc);
-    foreach($_POST['upc'] as $upc)
-    foreach ( $_POST['part_code'] as  $part_code) // set variable for array 
-    foreach ($_POST['description'] as $description)
-    foreach ($_POST['hsn'] as $hsn)  
-    foreach ($_POST['brand_name'] as $brand_name) 
-
-  
-
-      $insert="INSERT INTO add_product(upc,part_code,description,hsn,brand_name) VALUES ('$upc','$part_code','$description','$hsn','$brand_name')";
-      $result=mysqli_query($conn,$insert);
+      // check is each post has value
+      echo json_encode($_POST);
+      $insert='';
+      if(isset($_POST['brand_name']) && isset($_POST['upc']) && isset($_POST['part_code']) && isset($_POST['description']) && isset($_POST['hsn'])){
+      echo  $insert="INSERT INTO add_product(upc,part_code,description,hsn,brand_name) VALUES";
+        $brand_name = $_POST['brand_name'];
+        $upc = $_POST['upc'];
+        $part_code = $_POST['part_code'];
+        $description = $_POST['description'];
+        $hsn = $_POST['hsn'];
+          for($i = 0; $i < count($brand_name) ; $i ++){
+            $v1 = $upc[$i]; $v2= $part_code[$i]; $v3 = $description[$i]; $v4= $hsn[$i];$v5=$brand_name[$i];
+            $insert .="('$v1','$v2','$v3','$v4','$v5'),";
+          }
+      }
+      $insert = substr($insert, 0, -1); // remove the last , from query
+      echo "<pre>";
+      echo $insert;
+      echo "</pre>";
+      
+      //$result=mysqli_query($conn,$insert);
 }
 ?>
 <html class="loading" lang="en" data-textdirection="ltr">
@@ -92,8 +94,8 @@ if(isset($_POST['submit'])){
                                     <form class="formValidate" id="formValidate" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
                                         <div class="product_block" >
                                             <div class="row outer_div">
-                                            <div class="input-field col s6  ">
-                                                  <select class="select2 browser-default" name="data[brand_name]">
+                                            <div class="input-field col s6 ">
+                                                  <select class="select2 browser-default" name="brand_name[]">
                                                     <optgroup label="Brands">
                                                         <?php
                                                                 $sql="select id,brand_name from add_brand";
@@ -109,20 +111,20 @@ if(isset($_POST['submit'])){
                                                 </div>
                                                 <div class="input-field col s6 ">
                                                     <label for="upc" class="p-2">UPC*</label>
-                                                    <input id="upc" name="data[upc]" type="text"  data-error=".errorTxt1" required>
+                                                    <input id="upc" name="upc[]" type="text"  data-error=".errorTxt1" required>
                                                 </div>
                                                 <div class="input-field col s6  ">
                                                     <label for="part_code" class="p-2">Part-Code*</label>
-                                                    <input id="part_code" type="text" name="data[part_code]" data-error=".errorTxt2" required>
+                                                    <input id="part_code" type="text" name="part_code[]" data-error=".errorTxt2" required>
                                                     <small class="error_part"></small>
                                                 </div>
                                                 <div class="input-field col s6 ">
                                                     <label for="description" class="p-2">Description*</label>
-                                                    <input id="" name="data[description]" type="text"  data-error=".errorTxt1" required>
+                                                    <input id="" name="description[]" type="text"  data-error=".errorTxt1" required>
                                                 </div>
                                                 <div class="input-field col s6  mb-4">
                                                     <label for="hsn" class="p-2">HSN Code*</label>
-                                                    <input id="hsn" name="data[hsn]" type="text"  data-error=".errorTxt1" required>
+                                                    <input id="hsn" name="hsn[]" type="text"  data-error=".errorTxt1" required>
                                                 </div>
                                                 
                                             </div>
@@ -178,22 +180,22 @@ if(isset($_POST['submit'])){
     <script src="<?=base_url;?>app-assets/js/scripts/form-select2.min.js"></script>
     <script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" defer ></script>
     <script>
-    
+
     let html =`<div class="row outer_div" style="padding:1rem;">
                     <div class="input-field col s6 ">
-                        <select class="select2 browser-default" name="data[brand_name]">
+                        <select class="select2 browser-default" name="brand_name[]">
                             <optgroup label="Brands">
-                            <option>sdfòdssd</option>
+                            <?=$optionsHtml?>
                             </optgroup>
                         </select> 
                     </div>
                     <div class="input-field col s6 ">
                         <label for="upc" class="p-2">UPC*</label>
-                        <input name="data[upc]" type="text"  required>
+                        <input name="upc[]" type="text"  required>
                     </div>
                     <div class="input-field col s6 ">
                         <label for="part_code" class="p-2">Part-Code*</label>
-                        <input  type="text" name="data[part_code]" required>
+                        <input  type="text" name="part_code[]" required>
                     </div>
                     <div class="input-field col s6 ">
                         <label for="description" class="p-2">Description*</label>
@@ -207,7 +209,10 @@ if(isset($_POST['submit'])){
                         <button type="button" class="btn btn-danger removeRow">Remove</button>
                     </div>
                 </div>`;  
-                $('body').append(html);
+              $('.add_more').on('click', function(e) {
+                $('.product_block').append(html);
+              })
+                
       </script> 
   </body>
 </html>
