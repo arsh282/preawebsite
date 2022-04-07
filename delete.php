@@ -1,21 +1,13 @@
 <?php
-
 include("connection.php");
-if(isset($_GET['delete'])){
 
-    $id= $_GET['delete'];
-  delete_data($conn, $id);
-
-}
-function delete_data($conn, $id){
-   
-    $query="DELETE from login_user WHERE id=$id";
-    $exec= mysqli_query($conn,$query);
-    if($exec){
-      header('location:/preawebsite/add_admin.php');
-    }else{
-        $msg= "Error: " . $query . "<br>" . mysqli_error($conn);
-      echo $msg;
-    }
-}
-?>
+           $id = $_GET['id'];
+        
+          echo $query = "DELETE from login_user WHERE id='$id'";
+           $res = mysqli_query( $conn, $query );
+           if($res){
+            header('location:./add_admin.php');
+          }else{
+               echo  0;
+           }
+    ?>   

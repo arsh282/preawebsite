@@ -12,4 +12,12 @@
    max-height:51% !important;
  
 }
+.align_div{
+padding-left:310px !important;
+}
+@media only screen and (max-width: 667px) and (min-width: 375px)  {
+.align_div{
+    padding-left:0 !important;
+    }
+}
 

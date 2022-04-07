@@ -9,8 +9,8 @@ if(isset($_POST['submit'])){
   $username=$_POST['username']; 
   $password=md5($_POST['password']);
   // $password=md5($password);
- 
-  echo $sql="(SELECT id,username,password,role_id FROM login_user where username='$username' and password ='$password')";
+  // echo $sql="(SELECT id,username,password,role_id FROM login_user where username='$username' and password ='$password')";
+  echo $sql="( SELECT id, username,password,role_id FROM login_user where username='$username' and password ='$password' UNION SELECT id,username,password,role_id FROM stores where username='$username' and password ='$password')";
   $result=mysqli_query($conn,$sql);
   var_dump($result);
   if(mysqli_num_rows($result) > 0){
@@ -19,7 +19,7 @@ if(isset($_POST['submit'])){
     $_SESSION['id']=$row['id'];
     $_SESSION['username']=$row['username'];
     $_SESSION['role_id']=$row['role_id'];
-    print($_SESSION);
+    
     }
   }else{
     echo "No Records Found!";
@@ -32,9 +32,6 @@ else{
   echo'hello';
 }
  ?> 
-
-  
-
 <html class="loading" lang="en" data-textdirection="ltr">
   <!-- BEGIN: Head-->
   <head>
@@ -45,8 +42,8 @@ else{
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>User Login | Materialize - Material Design Admin Template</title>
-    <link rel="apple-touch-icon" href="../../../app-assets/images/favicon/apple-touch-icon-152x152.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/preawebsite/app-assets/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/preawebsite/app-assets/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
     <link rel="stylesheet" type="text/css" href="/preawebsite/vendors/vendors.min.css">
@@ -57,7 +54,7 @@ else{
     <link rel="stylesheet" type="text/css" href="/preawebsite/cs/login.css">
     <!-- END: Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
     <!-- END: Cus tom CSS-->
     <style type="text/css">
       .error {
@@ -137,30 +134,6 @@ else{
     <script src="/preawebsite/js/plugins.min.js"></script>
     <script src="/preawebsite/js/search.min.js"></script>
     <script src="/preawebsite/js/custom/custom-script.min.js"></script>
-    <script>
-$(document).ready(function() {
-
-  $('.login-form').submit(function() {
-   
-    var username = $('#username').val();
-    var password = $('#password').val();
-
-    $(".error").remove();
-
-    if (username.length < 1) {
-      $('#username').after('<span class="error text-muted" style="color: lightslategrey !important;">This field is required</span>');
-    }
-   
-   
-    if (password.length < 1) {
-      $('#password').after('<span class="error text-muted" style="color: lightslategrey !important;">Password must be at least 1 characters long</span>');
-    }
-  });
- 
-});
-
-
-</script>
 
   </body>
 </html>

@@ -26,7 +26,7 @@ error_reporting(E_ALL);
     <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/style.min.css">
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
@@ -40,20 +40,19 @@ error_reporting(E_ALL);
    
     ?>
     <?php
-    if($_SESSION['role_id'] == 1)
-    {
-      include'../preawebsite/slidebar_superadmin.php';
-    }
- 
-    print_r($_SESSION);
-    ?>
-     <?php
-    if($_SESSION['role_id'] == 3)
-    {
-      include'../preawebsite/slidebar_accountant.php';
-    }
- 
-    print_r($_SESSION);
+          if($_SESSION['role_id'] == 2)
+          {
+          include '../preawebsite/slidebar_admin.php';
+          }
+
+          elseif($_SESSION['role_id'] == 1)
+          {
+            include'../preawebsite/slidebar_superadmin.php';
+          }
+          else{
+            include'../preawebsite/slidebar_accountant.php';
+
+          }
     ?>
 
     <!-- BEGIN: Page Main-->
@@ -231,7 +230,7 @@ error_reporting(E_ALL);
                         <div class="card animate fadeLeft">
                            <div class="card-content  center">
                               <h6 class="card-title font-weight-400 mb-0">Apple Watch</h6>
-                              <img src="../../../app-assets/images/cards/watch.png" alt="" class="responsive-img" />
+                              <img src="/preawebsite/app-assets/images/cards/watch.png" alt="" class="responsive-img" />
                               <p><b>The Apple Watch</b></p>
                               <p>One day only exclusive sale on our marketplace</p>
                            </div>
@@ -244,7 +243,7 @@ error_reporting(E_ALL);
                         <div class="card animate fadeUp">
                            <div class="card-content center">
                               <span class="card-title center-align">Music</span>
-                              <img src="../../../app-assets/images/cards/headphones-2.png" alt="" class="responsive-img" />
+                              <img src="/preawebsite/app-assets/images/cards/headphones-2.png" alt="" class="responsive-img" />
                            </div>
                            <div class="card-action pt-0">
                               <p class="">Default Quality</p>
@@ -263,7 +262,7 @@ error_reporting(E_ALL);
                         <div class="card animate fadeRight">
                            <div class="card-content center">
                               <h6 class="card-title font-weight-400 mb-0">iPhone</h6>
-                              <img src="../../../app-assets/images/cards/iphonec.png" alt="" class="responsive-img" />
+                              <img src="/preawebsite/app-assets/images/cards/iphonec.png" alt="" class="responsive-img" />
                               <p><b>The Apple iPhone X</b></p>
                               <p>One day only exclusive sale on our marketplace</p>
                            </div>
@@ -280,7 +279,7 @@ error_reporting(E_ALL);
                         <div class="col s12 m3">
                            <div class="card gradient-shadow gradient-45deg-light-blue-cyan border-radius-3 animate fadeUp">
                               <div class="card-content center">
-                                 <img src="../../../app-assets/images/icon/apple-watch.png"
+                                 <img src="/preawebsite/app-assets/images/icon/apple-watch.png"
                                     class="width-40 border-round z-depth-5 responsive-img" alt="image" />
                                  <h5 class="white-text lighten-4">50% Off</h5>
                                  <p class="white-text lighten-4">On apple watch</p>
@@ -290,7 +289,7 @@ error_reporting(E_ALL);
                         <div class="col s12 m3">
                            <div class="card gradient-shadow gradient-45deg-red-pink border-radius-3 animate fadeUp">
                               <div class="card-content center">
-                                 <img src="../../../app-assets/images/icon/printer.png"
+                                 <img src="/preawebsite/app-assets/images/icon/printer.png"
                                     class="width-40 border-round z-depth-5 responsive-img" alt="images" />
                                  <h5 class="white-text lighten-4">20% Off</h5>
                                  <p class="white-text lighten-4">On Canon Printer</p>
@@ -300,7 +299,7 @@ error_reporting(E_ALL);
                         <div class="col s12 m3">
                            <div class="card gradient-shadow gradient-45deg-amber-amber border-radius-3 animate fadeUp">
                               <div class="card-content center">
-                                 <img src="../../../app-assets/images/icon/laptop.png"
+                                 <img src="/preawebsite/app-assets/images/icon/laptop.png"
                                     class="width-40 border-round z-depth-5 responsive-img" alt="image" />
                                  <h5 class="white-text lighten-4">40% Off</h5>
                                  <p class="white-text lighten-4">On apple macbook</p>
@@ -310,7 +309,7 @@ error_reporting(E_ALL);
                         <div class="col s12 m3">
                            <div class="card gradient-shadow gradient-45deg-green-teal border-radius-3 animate fadeUp">
                               <div class="card-content center">
-                                 <img src="../../../app-assets/images/icon/bowling.png"
+                                 <img src="/preawebsite/app-assets/images/icon/bowling.png"
                                     class="width-40 border-round z-depth-5 responsive-img" alt="image" />
                                  <h5 class="white-text lighten-4">60% Off</h5>
                                  <p class="white-text lighten-4">On any game</p>
@@ -375,7 +374,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-1.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-1.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -387,7 +386,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-2.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-2.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -399,7 +398,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-3.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-3.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -411,7 +410,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-4.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-4.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -423,7 +422,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-5.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-5.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -435,7 +434,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-6.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-6.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -447,7 +446,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-7.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-7.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -459,7 +458,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-8.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-8.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -471,7 +470,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-1.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-1.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -483,7 +482,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-9.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-9.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -495,7 +494,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-10.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-10.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -507,7 +506,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-off avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-11.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-11.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -519,7 +518,7 @@ error_reporting(E_ALL);
               <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                 data-target="slide-out-chat">
                 <span class="avatar-status avatar-online avatar-50"><img
-                    src="../../../app-assets/images/avatar/avatar-12.png" alt="avatar" />
+                    src="/preawebsite/app-assets/images/avatar/avatar-12.png" alt="avatar" />
                   <i></i>
                 </span>
                 <div class="user-content">
@@ -681,7 +680,7 @@ error_reporting(E_ALL);
                 <h6 class="timeline-title">12 new users registered</h6>
                 <p class="timeline-text">Here are some news feed interactions concepts.</p>
                 <div class="timeline-content">
-                  <img src="../../../app-assets/images/icon/pdf.png" alt="document" height="30" width="25"
+                  <img src="/preawebsite/app-assets/images/icon/pdf.png" alt="document" height="30" width="25"
                     class="mr-1">Registration.doc
                 </div>
               </li>
@@ -690,7 +689,7 @@ error_reporting(E_ALL);
                 <h6 class="timeline-title">Tina is attending your activity</h6>
                 <p class="timeline-text">Here are some news feed interactions concepts.</p>
                 <div class="timeline-content">
-                  <img src="../../../app-assets/images/icon/pdf.png" alt="document" height="30" width="25"
+                  <img src="/preawebsite/app-assets/images/icon/pdf.png" alt="document" height="30" width="25"
                     class="mr-1">Activity.doc
                 </div>
               </li>
@@ -720,7 +719,7 @@ error_reporting(E_ALL);
                 <h6 class="timeline-title">Database overloaded 89%</h6>
                 <p class="timeline-text">Here are some news feed interactions concepts.</p>
                 <div class="timeline-content">
-                  <img src="../../../app-assets/images/icon/pdf.png" alt="document" height="30" width="25"
+                  <img src="/preawebsite/app-assets/images/icon/pdf.png" alt="document" height="30" width="25"
                     class="mr-1">Database-log.doc
                 </div>
               </li>
@@ -754,7 +753,7 @@ error_reporting(E_ALL);
     <li class="chat-body">
       <ul class="collection">
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png"
+          <span class="avatar-status avatar-online avatar-50"><img src="/preawebsite/app-assets/images/avatar/avatar-7.png"
               alt="avatar" />
           </span>
           <div class="user-content speech-bubble">
@@ -767,7 +766,7 @@ error_reporting(E_ALL);
           </div>
         </li>
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png"
+          <span class="avatar-status avatar-online avatar-50"><img src="/preawebsite/app-assets/images/avatar/avatar-7.png"
               alt="avatar" />
           </span>
           <div class="user-content speech-bubble">
@@ -785,7 +784,7 @@ error_reporting(E_ALL);
         </li>
 
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png"
+          <span class="avatar-status avatar-online avatar-50"><img src="/preawebsite/app-assets/images/avatar/avatar-7.png"
               alt="avatar" />
           </span>
           <div class="user-content speech-bubble">
@@ -798,7 +797,7 @@ error_reporting(E_ALL);
           </div>
         </li>
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png"
+          <span class="avatar-status avatar-online avatar-50"><img src="/preawebsite/app-assets/images/avatar/avatar-7.png"
               alt="avatar" />
           </span>
           <div class="user-content speech-bubble">
@@ -821,7 +820,7 @@ error_reporting(E_ALL);
           </div>
         </li>
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png"
+          <span class="avatar-status avatar-online avatar-50"><img src="/preawebsite/app-assets/images/avatar/avatar-7.png"
               alt="avatar" />
           </span>
           <div class="user-content speech-bubble">
@@ -829,7 +828,7 @@ error_reporting(E_ALL);
           </div>
         </li>
         <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
-          <span class="avatar-status avatar-online avatar-50"><img src="../../../app-assets/images/avatar/avatar-7.png"
+          <span class="avatar-status avatar-online avatar-50"><img src="/preawebsite/app-assets/images/avatar/avatar-7.png"
               alt="avatar" />
           </span>
           <div class="user-content speech-bubble">

@@ -16,14 +16,14 @@ $(document).ready(function () {
                     comment: 1,
                     attachment: 1,
                     users: [
-                        "../../../app-assets/images/avatar/avatar-10.png"
+                        "/preawebsite/app-assets/images/avatar/avatar-10.png"
                     ]
                 },
                 {
                     id: "1_2",
                     title: "Type Something",
                     border: "orange",
-                    image: "../../../app-assets/images/gallery/46.jpg",
+                    image: "/preawebsite/app-assets/images/gallery/46.jpg",
                     dueDate: "FEBRUARY 1, 20190"
                 },
                 {
@@ -34,7 +34,7 @@ $(document).ready(function () {
                     comment: 23,
                     attachment: 1,
                     users: [
-                        "../../../app-assets/images/avatar/avatar-11.png"
+                        "/preawebsite/app-assets/images/avatar/avatar-11.png"
                     ]
                 },
                 {
@@ -45,7 +45,7 @@ $(document).ready(function () {
                     comment: 56,
                     attachment: 1,
                     users: [
-                        "../../../app-assets/images/avatar/avatar-12.png"
+                        "/preawebsite/app-assets/images/avatar/avatar-12.png"
                     ]
                 },
                 {
@@ -72,7 +72,7 @@ $(document).ready(function () {
                     dueDate: "OCTOMBER 1, 2019",
                     comment: 8,
                     users: [
-                        "../../../app-assets/images/avatar/avatar-13.png"
+                        "/preawebsite/app-assets/images/avatar/avatar-13.png"
                     ]
                 },
                 {
@@ -104,7 +104,7 @@ $(document).ready(function () {
                     dueDate: "MARCH 1, 2019",
                     comment: 10,
                     users: [
-                        "../../../app-assets/images/avatar/avatar-14.png"
+                        "/preawebsite/app-assets/images/avatar/avatar-14.png"
                     ]
                 },
                 {
@@ -122,7 +122,7 @@ $(document).ready(function () {
                     border: "red",
                     dueDate: "MARCH 9, 2019",
                     users: [
-                        "../../../app-assets/images/avatar/avatar-15.png"
+                        "/preawebsite/app-assets/images/avatar/avatar-15.png"
                     ]
                 }
             ]

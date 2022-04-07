@@ -8,7 +8,7 @@ $email_error="";
 use PHPMailer\PHPMailer\PHPMailer; 
 use PHPMailer\PHPMailer\Exception;
 function send($token,$email)
-{ 
+{     
         $email = $_POST['email'];
         require 'PHPMailer/src/Exception.php';
         require 'PHPMailer/src/PHPMailer.php';
@@ -29,38 +29,43 @@ function send($token,$email)
             $mail->addAddress($email, 'arsh');  // receiver's email and name
             $mail->Subject = 'Email verification';
             $mail->Body    = "Please click this button to verify your account: previous 
-              <a href=".$actual_link."/preawebsite/form-wizard.php?token=$token>Verify</a>";
+              <button><a href=".$actual_link."/preawebsite/form-wizard.php?token=$token&email=$email>Verify</a></button>";
             $mail->send();
-            echo 'Message has been sent';
+            // echo 'Message has been sent';
           if(!$mail->send())
           {
-          echo 'Message could not be sent.';
-          echo 'Mailer Error: ' . $mail->ErrorInfo;
+
           } 
           else 
           {
-              echo 'Message has been sent';
-             
-              echo $actual_link;
+  
           }
         }
-    $name=$_POST['name'];
-    $email = $_POST['email'];
-    $contact = $_POST['contact'];
-    $gender = $_POST['gender'];
-    $token = rand();
-    echo $sql = "INSERT INTO login_user(`name`,`email`,`contact`,`gender`,`token`) VALUES ('$name', '$email', '$contact', '$gender','$token')";
-    $result=mysqli_query($conn,$sql);
-    if ($result) 
-      {
-          echo "Registration successfull. Please verify your email.";
-          send($token,$email);
-        }
-      else
-        {
-            echo 'fail';
-        }
-
-    
+$name=$_POST['name'];
+$email = $_POST['email'];
+$contact = $_POST['contact'];
+$gender = $_POST['gender'];
+$token = rand();
+  $check=mysqli_num_rows(mysqli_query($conn,"SELECT email FROM login_user WHERE email ='$email'"));
+  // $_SESSION['id']=$check['id'];
+  if($check>0)
+  {
+   echo 'email exist'; 
+  }
+else{
+  $sql = "INSERT INTO login_user(`name`,`email`,`contact`,`gender`,`token`) VALUES ('$name', '$email', '$contact', '$gender','$token')";
+  $result=mysqli_query($conn,$sql);
+  if ($result) 
+  {   
+      send($token,$email);
+      echo ('success');
+  }
+  else
+    {
+      echo ('fails');
+      
+    }
+}
+  
 
 ?>
