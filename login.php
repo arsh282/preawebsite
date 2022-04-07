@@ -42,19 +42,19 @@ else{
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>User Login | Materialize - Material Design Admin Template</title>
-    <link rel="apple-touch-icon" href="/preawebsite/app-assets/images/favicon/apple-touch-icon-152x152.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/preawebsite/app-assets/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="<?=base_url;?>app-assets/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url;?>app-assets/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vendors/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vendors/vendors.min.css">
     <!-- END: VENDOR CSS-->
     <!-- BEGIN: Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/style.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/cs/login.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vertical-modern-menu-template/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vertical-modern-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>cs/login.css">
     <!-- END: Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>app-assets/css/custom/custom.css">
     <!-- END: Cus tom CSS-->
     <style type="text/css">
       .error {
@@ -105,7 +105,7 @@ else{
                     </div>
                     <div class="row">
                       <div class="input-field col s12">
-                        <a href="/preawebsite/dashboard.php">
+                        <a href="<?=base_url;?>dashboard.php">
                         <button type="submit"id="submit" name="submit" class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">Login
                         </button>
                         </a>
@@ -128,12 +128,12 @@ else{
     </div>
     <!-- BEGIN VENDOR JS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/preawebsite/js/vendors.min.js"></script>
+    <script src="<?=base_url;?>js/vendors.min.js"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN THEME  JS-->
-    <script src="/preawebsite/js/plugins.min.js"></script>
-    <script src="/preawebsite/js/search.min.js"></script>
-    <script src="/preawebsite/js/custom/custom-script.min.js"></script>
+    <script src="<?=base_url;?>js/plugins.min.js"></script>
+    <script src="<?=base_url;?>js/search.min.js"></script>
+    <script src="<?=base_url;?>js/custom/custom-script.min.js"></script>
 
   </body>
 </html>

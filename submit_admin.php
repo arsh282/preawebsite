@@ -29,7 +29,7 @@ function send($token,$email)
             $mail->addAddress($email, 'arsh');  // receiver's email and name
             $mail->Subject = 'Email verification';
             $mail->Body    = "Please click this button to verify your account: previous 
-              <button><a href=".$actual_link."/preawebsite/form-wizard.php?token=$token&email=$email>Verify</a></button>";
+              <button><a href=".$actual_link."<?=base_url;?>form-wizard.php?token=$token&email=$email>Verify</a></button>";
             $mail->send();
             // echo 'Message has been sent';
           if(!$mail->send())

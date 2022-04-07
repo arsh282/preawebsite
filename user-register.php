@@ -40,19 +40,19 @@ if(isset($_POST['submit']))
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>User Register | Materialize - Material Design Admin Template</title>
-    <link rel="apple-touch-icon" href="/preawebsite/app-assets/images/favicon/apple-touch-icon-152x152.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/preawebsite/app-assets/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="<?=base_url;?>app-assets/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url;?>app-assets/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <!-- BEGIN: VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/cs/register.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>cs/register.min.css">
     <!-- END: VENDOR CSS-->
     <!-- BEGIN: Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/style.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/cs/login.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vertical-modern-menu-template/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vertical-modern-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>cs/login.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>app-assets/css/custom/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- END: Custom CSS-->
     <Style>
@@ -143,7 +143,7 @@ if(isset($_POST['submit']))
                 </div>
                 <div class="row">
                   <div class="input-field col s12">
-                    <p class="margin medium-small"><a href="/preawebsite/login.php">Already have an account? Login</a></p>
+                    <p class="margin medium-small"><a href="<?=base_url;?>login.php">Already have an account? Login</a></p>
                   </div>
                 </div>
               </form>
@@ -153,12 +153,12 @@ if(isset($_POST['submit']))
         </div>
       </div>
     </div>
-    <script src="/preawebsite/js/vendors.min.js"></script>
+    <script src="<?=base_url;?>js/vendors.min.js"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN THEME  JS-->
-    <script src="/preawebsite/js/plugins.min.js"></script>
-    <script src="/preawebsite/js/search.min.js"></script>
-    <script src="/preawebsite/js/custom/custom-script.min.js"></script>
+    <script src="<?=base_url;?>js/plugins.min.js"></script>
+    <script src="<?=base_url;?>js/search.min.js"></script>
+    <script src="<?=base_url;?>js/custom/custom-script.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){

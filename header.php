@@ -15,19 +15,19 @@ error_reporting(E_ALL);
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>Dashboard eCommerce | Materialize - Material Design Admin Template</title>
-    <link rel="apple-touch-icon" href="/preawebsite/images/favicon/apple-touch-icon-152x152.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/preawebsite/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="<?=base_url;?>images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url;?>images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vendors.min.css">
     <!-- END: VENDOR CSS-->
     <!-- BEGIN: Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/preawebsite/vertical-modern-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vertical-modern-menu-template/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vertical-modern-menu-template/style.min.css">
     <!-- BEGIN: Custom CSS-->
-        <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
+        <link rel="stylesheet" type="text/css" href="<?=base_url;?>app-assets/css/custom/custom.css">
 
-    <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>app-assets/css/custom/custom.css">
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
@@ -39,7 +39,7 @@ error_reporting(E_ALL);
           <div class="nav-wrapper">
 
             <ul class="navbar-list right mt-1">
-              <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown"><span class="avatar-status avatar-online"><img src="/preawebsite/app-assets/images/avatar/avatar-7.png" alt="avatar"><i></i></span></a></li>
+              <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown"><span class="avatar-status avatar-online"><img src="<?=base_url;?>app-assets/images/avatar/avatar-7.png" alt="avatar"><i></i></span></a></li>
             </ul>
 
             <!-- profile-dropdown-->
@@ -73,7 +73,7 @@ error_reporting(E_ALL);
       <li class="auto-suggestion"><a class="collection-item" href="#">
           <div class="display-flex">
             <div class="display-flex align-item-center flex-grow-1">
-              <div class="avatar"><img src="/preawebsite/app-assets/images/icon/pdf-image.png" width="24" height="30" alt="sample image"></div>
+              <div class="avatar"><img src="<?=base_url;?>app-assets/images/icon/pdf-image.png" width="24" height="30" alt="sample image"></div>
               <div class="member-info display-flex flex-column"><span class="black-text">Two new item submitted</span><small class="grey-text">Marketing Manager</small></div>
             </div>
             <div class="status"><small class="grey-text">17kb</small></div>
@@ -81,7 +81,7 @@ error_reporting(E_ALL);
       <li class="auto-suggestion"><a class="collection-item" href="#">
           <div class="display-flex">
             <div class="display-flex align-item-center flex-grow-1">
-              <div class="avatar"><img src="/preawebsite/app-assets/images/icon/doc-image.png" width="24" height="30" alt="sample image"></div>
+              <div class="avatar"><img src="<?=base_url;?>app-assets/images/icon/doc-image.png" width="24" height="30" alt="sample image"></div>
               <div class="member-info display-flex flex-column"><span class="black-text">52 Doc file Generator</span><small class="grey-text">FontEnd Developer</small></div>
             </div>
             <div class="status"><small class="grey-text">550kb</small></div>
@@ -89,7 +89,7 @@ error_reporting(E_ALL);
       <li class="auto-suggestion"><a class="collection-item" href="#">
           <div class="display-flex">
             <div class="display-flex align-item-center flex-grow-1">
-              <div class="avatar"><img src="/preawebsite/app-assets/images/icon/xls-image.png" width="24" height="30" alt="sample image"></div>
+              <div class="avatar"><img src="<?=base_url;?>app-assets/images/icon/xls-image.png" width="24" height="30" alt="sample image"></div>
               <div class="member-info display-flex flex-column"><span class="black-text">25 Xls File Uploaded</span><small class="grey-text">Digital Marketing Manager</small></div>
             </div>
             <div class="status"><small class="grey-text">20kb</small></div>
@@ -97,7 +97,7 @@ error_reporting(E_ALL);
       <li class="auto-suggestion"><a class="collection-item" href="#">
           <div class="display-flex">
             <div class="display-flex align-item-center flex-grow-1">
-              <div class="avatar"><img src="/preawebsite/app-assets/images/icon/jpg-image.png" width="24" height="30" alt="sample image"></div>
+              <div class="avatar"><img src="<?=base_url;?>app-assets/images/icon/jpg-image.png" width="24" height="30" alt="sample image"></div>
               <div class="member-info display-flex flex-column"><span class="black-text">Anna Strong</span><small class="grey-text">Web Designer</small></div>
             </div>
             <div class="status"><small class="grey-text">37kb</small></div>
@@ -107,28 +107,28 @@ error_reporting(E_ALL);
       <li class="auto-suggestion"><a class="collection-item" href="#">
           <div class="display-flex">
             <div class="display-flex align-item-center flex-grow-1">
-              <div class="avatar"><img class="circle" src="/preawebsite/app-assets/images/avatar/avatar-7.png" width="30" alt="sample image"></div>
+              <div class="avatar"><img class="circle" src="<?=base_url;?>app-assets/images/avatar/avatar-7.png" width="30" alt="sample image"></div>
               <div class="member-info display-flex flex-column"><span class="black-text">John Doe</span><small class="grey-text">UI designer</small></div>
             </div>
           </div></a></li>
       <li class="auto-suggestion"><a class="collection-item" href="#">
           <div class="display-flex">
             <div class="display-flex align-item-center flex-grow-1">
-              <div class="avatar"><img class="circle" src="/preawebsite/app-assets/images/avatar/avatar-8.png" width="30" alt="sample image"></div>
+              <div class="avatar"><img class="circle" src="<?=base_url;?>app-assets/images/avatar/avatar-8.png" width="30" alt="sample image"></div>
               <div class="member-info display-flex flex-column"><span class="black-text">Michal Clark</span><small class="grey-text">FontEnd Developer</small></div>
             </div>
           </div></a></li>
       <li class="auto-suggestion"><a class="collection-item" href="#">
           <div class="display-flex">
             <div class="display-flex align-item-center flex-grow-1">
-              <div class="avatar"><img class="circle" src="/preawebsite/app-assets/images/avatar/avatar-10.png" width="30" alt="sample image"></div>
+              <div class="avatar"><img class="circle" src="<?=base_url;?>app-assets/images/avatar/avatar-10.png" width="30" alt="sample image"></div>
               <div class="member-info display-flex flex-column"><span class="black-text">Milena Gibson</span><small class="grey-text">Digital Marketing</small></div>
             </div>
           </div></a></li>
       <li class="auto-suggestion"><a class="collection-item" href="#">
           <div class="display-flex">
             <div class="display-flex align-item-center flex-grow-1">
-              <div class="avatar"><img class="circle" src="/preawebsite/app-assets/images/avatar/avatar-12.png" width="30" alt="sample image"></div>
+              <div class="avatar"><img class="circle" src="<?=base_url;?>app-assets/images/avatar/avatar-12.png" width="30" alt="sample image"></div>
               <div class="member-info display-flex flex-column"><span class="black-text">Anna Strong</span><small class="grey-text">Web Designer</small></div>
             </div>
           </div></a></li>
@@ -143,12 +143,12 @@ error_reporting(E_ALL);
   
     <!-- END: Footer-->
      <!-- BEGIN VENDOR JS-->
-    <script src="/preawebsite/js/vendors.min.js"></script>
+    <script src="<?=base_url;?>js/vendors.min.js"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN THEME  JS-->
-    <script src="/preawebsite/js/plugins.min.js"></script>
-    <script src="/preawebsite/js/search.min.js"></script>
-    <script src="/preawebsite/js/custom/custom-script.min.js"></script>
+    <script src="<?=base_url;?>js/plugins.min.js"></script>
+    <script src="<?=base_url;?>js/search.min.js"></script>
+    <script src="<?=base_url;?>js/custom/custom-script.min.js"></script>
   </body>
 
 <!-- Mirrored from pixinvent.com/materialize-material-design-admin-template/html/ltr/vertical-modern-menu-template/dashboard-ecommerce.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Aug 2021 17:53:59 GMT -->

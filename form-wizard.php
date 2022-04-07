@@ -53,21 +53,21 @@ error_reporting(E_ALL);
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>Form Wizard | Materialize - Material Design Admin Template</title>
-    <link rel="apple-touch-icon" href="/preawebsite/app-assets/images/favicon/apple-touch-icon-152x152.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/preawebsite/app-assets/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="<?=base_url;?>app-assets/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url;?>app-assets/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="../preawebsite/vendors/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="../preawebsite/vendors/flag-icon/css/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css" href="../preawebsite/vendors/materialize-stepper/materialize-stepper.min.css">
+    <link rel="stylesheet" type="text/css" href="..<?=base_url;?>vendors/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="..<?=base_url;?>vendors/flag-icon/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="..<?=base_url;?>vendors/materialize-stepper/materialize-stepper.min.css">
     <!-- END: VENDOR CSS-->
     <!-- BEGIN: Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="../preawebsite/app-assets/css/themes/vertical-modern-menu-template/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="../preawebsite/app-assets/css/themes/vertical-modern-menu-template/style.min.css">
-    <link rel="stylesheet" type="text/css" href="../preawebsite/app-assets/css/pages/form-wizard.min.css">
+    <link rel="stylesheet" type="text/css" href="..<?=base_url;?>app-assets/css/themes/vertical-modern-menu-template/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="..<?=base_url;?>app-assets/css/themes/vertical-modern-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="..<?=base_url;?>app-assets/css/pages/form-wizard.min.css">
     <!-- END: Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="/preawebsite/app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>app-assets/css/custom/custom.css">
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
@@ -130,19 +130,19 @@ error_reporting(E_ALL);
     <!-- END: Footer-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- BEGIN VENDOR JS-->
-    <script src="../preawebsite/app-assets/js/vendors.min.js"></script>
+    <script src="..<?=base_url;?>app-assets/js/vendors.min.js"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="../preawebsite/vendors/materialize-stepper/materialize-stepper.min.js"></script>
+    <script src="..<?=base_url;?>vendors/materialize-stepper/materialize-stepper.min.js"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN THEME  JS-->
-    <script src="../preawebsite/js/plugins.min.js"></script>
-    <script src="../preawebsite/js/search.min.js"></script>
-    <script src="/preawebsite/app-assets/js/custom/custom-script.min.js"></script>
-    <script src="/preawebsite/app-assets/js/scripts/customizer.min.js"></script>
+    <script src="..<?=base_url;?>js/plugins.min.js"></script>
+    <script src="..<?=base_url;?>js/search.min.js"></script>
+    <script src="<?=base_url;?>app-assets/js/custom/custom-script.min.js"></script>
+    <script src="<?=base_url;?>app-assets/js/scripts/customizer.min.js"></script>
     <!-- END THEME  JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="../preawebsite/js/scripts/form-wizard.min.js"></script>
+    <script src="..<?=base_url;?>js/scripts/form-wizard.min.js"></script>
     <!-- END PAGE LEVEL JS-->
     <script>
       // checkPasswordMatch
