@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+include('../connection.php');
 // print_r($_SESSION);
 ?>
 <html class="loading" lang="en" data-textdirection="ltr">
@@ -34,14 +34,13 @@ include('connection.php');
           <?php
             if($_SESSION['role_id'] == 2)
             {
-            include '../preawebsite/slidebar_admin.php';
+            include '../slidebar_admin.php';
             }
-          
             ?>
             <?php
             if($_SESSION['role_id'] == 1)
             {
-              include'../preawebsite/slidebar_superadmin.php';
+              include'../slidebar_superadmin.php';
             }
           ?>
         </div>
@@ -177,6 +176,30 @@ $(document).ready(function() {
 
 
     $('#modal1').modal();
+// $('.formValidate').submit(function(e){
+//  event.preventDefault();
+//     var formvalue = $(this).serialize();
+//     $.post('submit_admin.php',formvalue,function(data){
+//        console.log(data);
+//        var data = JSON.parse(response);
+//       //  if(data.status  == 'email exist')
+//       //   {  
+//       //     M.toast({
+//       //     html: 'Email exist!'
+//       //     }); 
+//       //   }
+//       //  else(data.status == 'success'){
+//       //      M.toast({
+//       //      html:'User has been registered.Please check your mail'
+//       //     })
+//       //   };
+//       //   else(data.status == 'fails'){
+//       //   M.toast({
+//       //     html: 'Registration has been failed'
+//       //     });
+//       // }
+//     });
+//   }); 
     $('.formValidate').submit(function(e){
       event.preventDefault();
       var formvalue = $(this).serialize();

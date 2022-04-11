@@ -1,26 +1,26 @@
 
 <?php
-include 'connection.php';
+include '.././connection.php';
 if(isset($_POST['submit'])){
       // check is each post has value
-      echo json_encode($_POST);
+       json_encode($_POST);
       $insert='';
-      if(isset($_POST['brand_name']) && isset($_POST['upc']) && isset($_POST['part_code']) && isset($_POST['description']) && isset($_POST['hsn'])){
-      echo  $insert="INSERT INTO add_product(upc,part_code,description,hsn,brand_name) VALUES";
-        $brand_name = $_POST['brand_name'];
-        $upc = $_POST['upc'];
-        $part_code = $_POST['part_code'];
-        $description = $_POST['description'];
-        $hsn = $_POST['hsn'];
-          for($i = 0; $i < count($brand_name) ; $i ++){
-            $v1 = $upc[$i]; $v2= $part_code[$i]; $v3 = $description[$i]; $v4= $hsn[$i];$v5=$brand_name[$i];
-            $insert .="('$v1','$v2','$v3','$v4','$v5'),";
+      if( isset($_POST['name']) && isset($_POST['address']) && isset($_POST['gst'])){
+        $name = $_POST['name'];
+        $address = $_POST['address'];
+        $gst = $_POST['gst'];
+        // print_r($_POST);
+          for($i = 0; $i < count($name) ; $i ++){
+            $v1 = $name[$i]; $v2= $address[$i]; $v3 = $gst[$i];
+            // echo  $insert="INSERT INTO add_product(name,address,gst,hsn,brand_name) VALUES(`$v1`,`$v2`,`$v3`,`$v4`,`$v5`)";
+             $insert= "INSERT INTO `supplier` ( `name`, `address`, `gst_no`) VALUES ('$v1 ', '$v2', '$v3') ";
+            $result=mysqli_query($conn,$insert);
           }
       }
       $insert = substr($insert, 0, -1); // remove the last , from query
-      echo "<pre>";
-      echo $insert;
-      echo "</pre>";
+      // echo "<pre>";
+      // echo $insert;
+      // echo "</pre>";
       
       //$result=mysqli_query($conn,$insert);
 }
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
+    <meta name="gst" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>Toasts | Materialize - Material Design Admin Template</title>
@@ -84,9 +84,9 @@ if(isset($_POST['submit'])){
                     <div class="col s12">
                       <ul class="collapsible collapsible-accordion">
                           <li>
-                            <div class="collapsible-header" tabindex="0" style="font-size: 20px;"><i class="material-icons">blur_circular</i> Add Product</div>
+                            <div class="collapsible-header" tabindex="0" style="font-size: 20px;"><i class="material-icons">blur_circular</i>Add Supplier</div>
                             <div class="collapsible-body" >
-                              <h5 class="page-title center-align" style="color: #6b6f82;padding-bottom:15px">Add Product</h5>
+                              <h5 class="page-title center-align" style="color: #6b6f82;padding-bottom:15px">Add Supplier</h5>
                               <div id="validations">
                                 <div class="card-content">
                                   <!-- <div class="title" style="padding: 20px 0 20px 0px;font-size: 29px;">Add Product</div> -->
@@ -94,39 +94,20 @@ if(isset($_POST['submit'])){
                                     <form class="formValidate" id="formValidate" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
                                         <div class="product_block" >
                                             <div class="row outer_div">
-                                            <div class="input-field col s6 ">
-                                                  <select class="select2 browser-default" name="brand_name[]">
-                                                    <optgroup label="Brands">
-                                                        <?php
-                                                                $sql="select id,brand_name from add_brand";
-                                                                $query=mysqli_query($conn,$sql);
-                                                                while($row = mysqli_fetch_array($query, MYSQLI_ASSOC)){ 
-                                                        ?>
-                                                              <option value="<?php echo $row["id"];?>"><?php echo $row["brand_name"]; ?></option>
-                                                        <?php
-                                                        }
-                                                        ?>
-                                                    </optgroup>
-                                                  </select>
-                                                </div>
+                                           
                                                 <div class="input-field col s6 ">
-                                                    <label for="upc" class="p-2">UPC*</label>
-                                                    <input id="upc" name="upc[]" type="text"  data-error=".errorTxt1" required>
+                                                    <label for="Name" class="p-2">Supplier Name*</label>
+                                                    <input id="name" name="name[]" type="text"  data-error=".errorTxt1" required>
                                                 </div>
                                                 <div class="input-field col s6  ">
-                                                    <label for="part_code" class="p-2">Part-Code*</label>
-                                                    <input id="part_code" type="text" name="part_code[]" data-error=".errorTxt2" required>
+                                                    <label for="Address" class="p-2">Address*</label>
+                                                    <input id="address" type="text" name="address[]" data-error=".errorTxt2" required>
                                                     <small class="error_part"></small>
                                                 </div>
                                                 <div class="input-field col s6 ">
-                                                    <label for="description" class="p-2">Description*</label>
-                                                    <input id="" name="description[]" type="text"  data-error=".errorTxt1" required>
+                                                    <label for="Gst" class="p-2">Gst No.*</label>
+                                                    <input id="" name="gst[]" type="text"  data-error=".errorTxt1" required>
                                                 </div>
-                                                <div class="input-field col s6  mb-4">
-                                                    <label for="hsn" class="p-2">HSN Code*</label>
-                                                    <input id="hsn" name="hsn[]" type="text"  data-error=".errorTxt1" required>
-                                                </div>
-                                                
                                             </div>
                                         </div>  
                                         <div class="form_action">
@@ -135,7 +116,7 @@ if(isset($_POST['submit'])){
                                                     <button class="add_more btn btn-success "  type="button">Add more</button>
                                                 </div>
                                                 <div class="input-field col s12">
-                                                    <button class="btn waves-effect waves-light right toast-basic submit mb-4" type="submit" name="submit">Submit
+                                                    <button class="btn waves-effect waves-light right toast-basic submit mb-4" type="submit" name="submit">Add Supplier
                                                         <i class="material-icons right">send</i>
                                                     </button>
                                                 </div>
@@ -149,23 +130,15 @@ if(isset($_POST['submit'])){
                           </li>
                       </ul>
                     </div>
-                  
-                    </div>
+                    
+                 
                   </div>
                 </div>
               </div>
           </div>
         </div>
       </div> 
-      <?php
-      $optionsHtml = '';
-      $sql='select id,brand_name from add_brand'; 
-      $query=mysqli_query($conn,$sql); 
-      while($row = mysqli_fetch_array($query, MYSQLI_ASSOC)){ 
-        $optionsHtml .="<option value='".$row['id']."'>".$row['brand_name']."</option>";
 
-       }
-      ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="<?=base_url;?>vendors/jquery-validation/jquery.validate.min.js"></script>
@@ -181,37 +154,40 @@ if(isset($_POST['submit'])){
     <script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" defer ></script>
     <script>
 
-    let html =`<div class="row outer_div" style="padding:1rem;">
+    </script>
+    <script>
+     
+$(document).ready(function(){
+  $('#table_id').DataTable({
+        "ajax": "/preawebsite/fetch_superadmin.php"
+    });
+  let html =`<div class="row outer_div" style="padding:1rem;">
+                    
                     <div class="input-field col s6 ">
-                        <select class="select2 browser-default" name="brand_name[]">
-                            <optgroup label="Brands">
-                            <?=$optionsHtml?>
-                            </optgroup>
-                        </select> 
-                    </div>
-                    <div class="input-field col s6 ">
-                        <label for="upc" class="p-2">UPC*</label>
-                        <input name="upc[]" type="text"  required>
-                    </div>
-                    <div class="input-field col s6 ">
-                        <label for="part_code" class="p-2">Part-Code*</label>
-                        <input  type="text" name="part_code[]" required>
+                        <label for="Name" class="p-2">Supplier Name*</label>
+                        <input name="name[]" type="text"  required>
                     </div>
                     <div class="input-field col s6 ">
-                        <label for="description" class="p-2">Description*</label>
-                        <input id=""  name="description[]" type="text" required>
+                        <label for="Address" class="p-2">Address*</label>
+                        <input  type="text" name="address[]" required>
                     </div>
-                    <div class="input-field col s6  mb-4">
-                        <label for="hsn" class="p-2">HSN Code*</label>
-                        <input id="hsn" name="hsn[]" type="text" required>
+                    <div class="input-field col s6 ">
+                        <label for="Gst No" class="p-2">Gst No*</label>
+                        <input id=""  name="gst[]" type="text" required>
                     </div>
+                    
                     <div class="input-field col s6 mb-4">
                         <button type="button" class="btn btn-danger removeRow">Remove</button>
                     </div>
                 </div>`;  
               $('.add_more').on('click', function(e) {
                 $('.product_block').append(html);
-              })
+              });
+              $(document).on('click', '.removeRow', function () {
+                  $(this).closest('.outer_div').remove();
+              });
+});
+   
                 
       </script> 
   </body>

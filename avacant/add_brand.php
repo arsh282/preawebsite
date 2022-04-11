@@ -4,7 +4,7 @@ $msg='';
 if (isset($_POST['submit'])) {
   $values=$_POST['brand_name'];
   foreach ($values as $value ) {
-  $insert="INSERT INTO add_brand(brand_name) VALUES ('$value')";
+  $insert="INSERT INTO brands(brand_name) VALUES ('$value')";
   $result=mysqli_query($conn,$insert);
   if($result){
     echo "success";
