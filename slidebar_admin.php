@@ -32,7 +32,7 @@ error_reporting(E_ALL);
   <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 2-columns   " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
     <row>
      <?php
-     include'..<?=base_url;?>header.php';
+     include'../header.php';
      ?>
    </row>
  <!-- BEGIN: SideNav-->
@@ -46,13 +46,14 @@ error_reporting(E_ALL);
         <li class="navigation-header"><a class="navigation-header-text">Applications</a><i class="navigation-header-icon material-icons">more_horiz</i>
         </li>
        <li class="bold">
-          <a class="waves-effect waves-cyan " href="<?=base_url;?>store_add.php">
+          <a class="waves-effect waves-cyan " href="<?=base_url;?>admin/store_add.php">
             <i class="material-icons">mail_outline</i>
             <span class="menu-title" data-i18n="Mail">Add Store</span>
             <!--<span class="badge new badge pill pink accent-2 float-right mr-2">5</span>-->
           </a>
 
-          <a class="waves-effect waves-cyan " href="<?=base_url;?>add_user.php">
+          <a class="waves-effect waves-cyan " href="<?=base_url;?>admin/
+          add_user.php">
             <i class="material-icons">mail_outline</i>
             <span class="menu-title" data-i18n="Mail">Add Staff</span>
             <!--<span class="badge new badge pill pink accent-2 float-right mr-2">5</span>-->

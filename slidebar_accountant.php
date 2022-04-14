@@ -63,6 +63,12 @@ error_reporting(E_ALL);
             <span class="menu-title" data-i18n="Mail">Add Supplier</span>
           </a>
         </li>
+        <li class="bold">
+          <a class="waves-effect waves-cyan " href="<?=base_url;?>purchase.php">
+            <i class="material-icons">mail_outline</i>
+            <span class="menu-title" data-i18n="Mail">Purchase</span>
+          </a>
+        </li>
     
       </ul>
       <div class="navigation-background"></div><a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out"><i class="material-icons">menu</i></a>

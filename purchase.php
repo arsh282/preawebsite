@@ -1,8 +1,7 @@
 <?php
 include('connection.php');
 $msg='';
-$select=$_POST['data'];
-echo $select;
+
 ?>
 <html class="loading" lang="en" data-textdirection="ltr">
   <!-- BEGIN: Head-->
@@ -21,17 +20,33 @@ echo $select;
     <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vendors/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vendors/flag-icon/css/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vertical-modern-menu-template/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/vertical-modern-menu-template/style.min.css">
-    <link rel="stylesheet" type="text/css" href="<?=base_url;?>/app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vendors/flag-icon/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vertical-modern-menu-template/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>vertical-modern-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>app-assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url;?>app-assets/css/pages/form-select2.min.css">
+    <link rel="stylesheet" href="<?=base_url;?>vendors/select2/select2-materialize.css" type="text/css">
     <!-- END: Custom CSS-->
   </head>
   <!-- END: Head-->
   <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 2-columns   " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
       <div class="row mb-5">
         <div>
-  
+        <?php
+          if($_SESSION['role_id'] == 2)
+          {
+          include '../preawebsite/slidebar_admin.php';
+          }
+
+          elseif($_SESSION['role_id'] == 1)
+          {
+            include'../preawebsite/slidebar_superadmin.php';
+          }
+          else{
+            include'../preawebsite/slidebar_accountant.php';
+
+          }
+        ?>
         </div>
         <div id="main">
           <div class="row">
@@ -42,57 +57,63 @@ echo $select;
                     <!-- Current balance & total transactions cards-->
                     <div class="row vertical-modern-dashboard">
                     <div class="col s12">
-                      <h5 class="page-title center-align" style="color: #6b6f82;padding-bottom:15px">Add Brands</h5>
                       <div id="validations">
                         <div class="card-content">
                           <!-- <div class="title" style="padding: 20px 0 20px 0px;font-size: 29px;">Add Product</div> -->
                             <div id="view-validations">
+                            <div class="row float-right">23/2/2021</div>
+                            <div class="clear"></div>
                               <form class="formValidate" id="formValidate" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
                                   <div class="product_block" >
-                                    <div class="row outer_div">
-                                    <div class="input-field col s6 ">
-                                      <select class="select2 browser-default" name="data" id="select1" onchange="this.form.submit();">
-                                          <optgroup label="Brands">
-                                          <?php
-                                                  $sql="select supplier_id,name from supplier";
-                                                  $query=mysqli_query($conn,$sql);
-                                                  while($row = mysqli_fetch_array($query, MYSQLI_ASSOC)){ 
-                                          ?>
-                                                  <option value="<?php echo $row["supplier_id"];?>"><?php echo $row["name"]; ?></option>
-                                          <?php
-                                          }
-                                          ?>
-                                          </optgroup>
-                                      </select>
-                                    </div>
-                                    <?php
-                                        $sql="select supplier_id,address,gst_no from supplier";
+                                    
+                                    <div class="row outer_div ">
+                                      <div class="input-field col s3 ">
+                                        <select class="select2 browser-default country" name="data">
+                                        
+                                        <?php
+                                        $sql="select supplier_id,name from supplier";
                                         $query=mysqli_query($conn,$sql);
                                         while($row = mysqli_fetch_array($query, MYSQLI_ASSOC)){ 
-                                    ?>
-                                    <div class="input-field col s6 ">
-                                        <label for="address" class="p-2">Address*</label>
-                                        <input id="address" name="address" type="text"  data-error=".errorTxt1" value="" required>
+                                        ?>
+                                            <option value="<?php echo $row["supplier_id"];?>"><?php echo $row["name"];?></option>  
+                                        <?php
+                                          }
+                                        ?>
+                                        </select>
+                                      </div>
+                                      <div id="confirmation"></div>
                                     </div>
-                                    <div class="input-field col s6  ">
-                                        <label for="gst_no" class="p-2">gst *</label>
-                                        <input id="gst_no" type="text" name="gst_no" data-error=".errorTxt2" value="" required>
-                                        <small class="error_part"></small>
+                                    <div class="row outer_div ">
+                                      <div class="input-field col s3 mt-3">
+                                        <input type="text" id="doj" class="datepicker" name="doj">
+                                        <label for="dob">Invoice Date</label>
+                                      </div>
+                                      <div class="input-field col s3 mt-3">
+                                        <label for="invoice_no" class="p-2">Invoice no*</label>
+                                        <input id="invoice_no" name="invoice_no" type="text" data-error=".errorTxt1" required>
+                                        <small class="errorTxt1"></small>
+                                      </div>
+                                      <div class="input-field col s3 mt-3">
+                                        <label for="freight" class="p-2">Freight*</label>
+                                        <input id="freight" name="freight" class="only_numeric" type="number" maxlength="6"  data-error=".errorTxt1"   required>
+                                        <small class="errorTxt1"></small>
+                                      </div>
+                                      <div class="input-field col s3 mt-3">
+                                        <label for="invoice_amount" class="p-2">Invoice Amount*</label>
+                                        <input id="invoice_amount" name="invoice_amount" type="number" data-error=".errorTxt1" required>
+                                        <small class="errorTxt1"></small>
+                                      </div>
+                                      <div class="col m3 s3 file-field input-field">
+                                        <div class="btn float-right">
+                                          <span>File</span>
+                                          <input type="file">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                          <input class="file-path validate valid" type="text">
+                                        </div>
+                                      </div>
                                     </div>
-                                    <?php } ?>
-                                    </div>
-                                    
                                   </div>
-                                  <div class="form_action">
-                                    <div class="row">
-                                        <div class="input-field col s12 center-align" >
-                                            <button class="add_more btn btn-success "  type="button">Add more</button>
-                                        </div>
-                                        <div class="input-field col s12">
-                                            <button class="btn waves-effect waves-light right toast-basic submit mb-4">Add Brands<i class="material-icons right">send</i></button>
-                                        </div>
-                                    </div>
-                                </div>
                               </form>
                             </div>
                         </div>
@@ -114,11 +135,21 @@ echo $select;
     <script src="<?=base_url;?>js/scripts/advance-ui-toasts.min.js"></script>
     <script src="<?=base_url;?>js/scripts/customizer.min.js"></script>
     <script src="<?=base_url;?>js/scripts/advance-ui-modals.min.js"></script>
+    <script src="<?=base_url;?>vendors/select2/select2.full.min.js"></script>
+    <script src="<?=base_url;?>app-assets/js/scripts/form-select2.min.js"></script>
     <script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" defer ></script>
     <script>
-      $(document).ready(function(){
-
+        $(document).ready(function(){
+          $(".country").change(function(){
+        var selected = $(this).children("option:selected").val();
+        // alert("You have selected the country - " + selected);
+        $.post('supplier_details.php', {data:selected}, function(response){ 
+          // alert();
+          $('#confirmation').html(response);
+        });
       });
+
+    });
     </script>
   </body>
 </html>

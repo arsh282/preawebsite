@@ -1,16 +1,16 @@
 <?php
 include('connection.php');
-$msg='';
-if (isset($_POST['submit'])) {
-  $values=$_POST['brand_name'];
-  foreach ($values as $value ) {
-  $insert="INSERT INTO brands(brand_name) VALUES ('$value')";
-  $result=mysqli_query($conn,$insert);
-  if($result){
-    echo "success";
-      }
-    }
-}
+// $msg='';
+// if (isset($_POST['submit'])) {
+//   $values=$_POST['brand_name'];
+//   foreach ($values as $value ) {
+//   $insert="INSERT INTO brands(brand_name) VALUES ('$value')";
+//   $result=mysqli_query($conn,$insert);
+//   if($result){
+//     echo "success";
+//       }
+//     }
+// }
 
 
 
@@ -130,17 +130,17 @@ if (isset($_POST['submit'])) {
   <script type="text/javascript">
 
 $(document).ready(function() {
-  // $('.formValidate').submit(function(e){
-  //     event.preventDefault();
-  //     var formvalue = $(this).serialize();
-  //     $.post('submit_brand.php',formvalue,function(data){
-  //       console.log(data);
-  //       var data = JSON.parse(response);
-  //       if(data.status == 'success'){
+  $('.formValidate').submit(function(e){
+      event.preventDefault();
+      var formvalue = $(this).serialize();
+      $.post('submit_brand.php',formvalue,function(data){
+        console.log(data);
+        var data = JSON.parse(response);
+        if(data.status == 'success'){
          
-  //       }
-  //     });
-  //   }); 
+        }
+      });
+    }); 
     var index = 1;
     $(document).on('click', '.add_more', function() {
   

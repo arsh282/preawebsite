@@ -1,5 +1,5 @@
 <?php
-include'connection.php';
+include'../connection.php';
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
@@ -37,14 +37,14 @@ error_reporting(E_ALL);
           <?php
             if($_SESSION['role_id'] == 2)
             {
-            include '../preawebsite/slidebar_admin.php';
+            include '../slidebar_admin.php';
             }
           
             ?>
             <?php
             if($_SESSION['role_id'] == 1)
             {
-              include'../preawebsite/slidebar_superadmin.php';
+              include'../slidebar_superadmin.php';
             }
           ?>
         </div>
@@ -155,9 +155,9 @@ error_reporting(E_ALL);
     <script src="<?=base_url;?>js/custom/custom-script.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
-      $('#table_id').DataTable({
-        "ajax": "/preawebsite/fetch_admin.php"
-    });
+    //   $('#table_id').DataTable({
+    //     "ajax": "/preawebsite/fetch_admin.php"
+    // });
     $(document).on("click",".user_delete",function() {
       alert("click");
       $('#modal2').modal('open');

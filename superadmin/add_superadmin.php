@@ -161,11 +161,11 @@ include('../connection.php');
     <script src="<?=base_url;?>js/scripts/advance-ui-modals.min.js"></script>
     <script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" defer ></script>
   <script type="text/javascript">
-
+    
 $(document).ready(function() {
-    $('#table_id').DataTable({
-        "ajax": "/preawebsite/fetch_superadmin.php"
-    });
+  // $('#table_id').DataTable({
+  //       "ajax": "/preawebsite/fetch_superadmin.php"
+  //   });
     $(document).on("click",".user_delete",function() {
       alert("click");
       $('#modal2').modal('open');
@@ -209,13 +209,13 @@ $(document).ready(function() {
           html: 'Please wait data has been send!'
         });
         console.log(data);
-        if(data == "email exist")
+        if(data.status == "email exist")
         {  
           M.toast({
           html: 'Email exist!'
           }); 
         }
-        else if(data == "success"){
+        else if(data.status == "success"){
             console.log('success');
             M.toast({
             html:'User has been registered.Please check your mail'
@@ -223,7 +223,7 @@ $(document).ready(function() {
             $('.formValidate').trigger('reset');
             $('#table_id').DataTable().ajax.reload();
             }
-        else if(data == "fails"){
+        else if(data.status == "fails"){
         
           M.toast({
             html: 'Registration has been failed'

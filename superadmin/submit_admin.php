@@ -15,7 +15,10 @@ $email_error="";
 //             echo "The file $file_pointer does 
 //                                    not exists";
 //         }
-use PHPMailer\PHPMailer\PHPMailer; 
+// use PHPMailer\PHPMailer\PHPMailer; 
+// use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 function send($token,$email)
 {     

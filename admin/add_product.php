@@ -1,6 +1,6 @@
 
 <?php
-include 'connection.php';
+include '../connection.php';
 if(isset($_POST['submit'])){
       // check is each post has value
        json_encode($_POST);
@@ -63,15 +63,15 @@ if(isset($_POST['submit'])){
         <?php
           if(isset($_SESSION['role_id']) && $_SESSION['role_id'] == 2)
           {
-          include 'slidebar_admin.php';
+          include '../slidebar_admin.php';
           }
 
           elseif(isset($_SESSION['role_id']) && $_SESSION['role_id'] == 2)
           {
-            include 'slidebar_superadmin.php';
+            include '../slidebar_superadmin.php';
           }
           else{
-            include 'slidebar_accountant.php';
+            include '../slidebar_accountant.php';
 
           }
         ?>
@@ -101,7 +101,7 @@ if(isset($_POST['submit'])){
                                                   <select class="select2 browser-default" name="brand_name[]">
                                                     <optgroup label="Brands">
                                                         <?php
-                                                                $sql="select id,brand_name from add_brand";
+                                                                $sql="select id,brand_name from brands";
                                                                 $query=mysqli_query($conn,$sql);
                                                                 while($row = mysqli_fetch_array($query, MYSQLI_ASSOC)){ 
                                                         ?>
@@ -211,8 +211,40 @@ if(isset($_POST['submit'])){
     <script>
      
 $(document).ready(function(){
-  $('#table_id').DataTable({
-        "ajax": "/preawebsite/fetch_superadmin.php"
+  // $('#table_id').DataTable({
+  //       "ajax": "/preawebsite/fetch_superadmin.php"
+  //   });
+  $('.formValidate').submit(function(e){
+      event.preventDefault();
+      var formvalue = $(this).serialize();
+      $.post('submit_product.php',formvalue,function(data){
+        
+        M.toast({
+          html: 'Please wait data has been send!'
+        });
+        console.log(data);
+        if(data.status == "email exist")
+        {  
+          M.toast({
+          html: 'Email exist!'
+          }); 
+        }
+        else if(data.status == "success"){
+            console.log('success');
+            M.toast({
+            html:'User has been registered.Please check your mail'
+            });
+            $('.formValidate').trigger('reset');
+            $('#table_id').DataTable().ajax.reload();
+            }
+        else if(data.status == "fails"){
+        
+          M.toast({
+            html: 'Registration has been failed'
+            }); 
+        };
+        
+      });
     });
   let html =`<div class="row outer_div" style="padding:1rem;">
                     <div class="input-field col s6 ">
